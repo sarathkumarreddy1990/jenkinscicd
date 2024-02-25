@@ -1,0 +1,31 @@
+pipeline {
+    agent any
+    
+    environment {
+        SONAR_TOKEN = credentials('sqa_534848b2636ad05bff77924f6413af7b498f6000')
+        SONAR_URL = 'http://54.234.215.196:9000' // Update with your SonarQube server URL
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    def scannerHome = tool 'SonarQubeScanner'
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=my-project-key \
+                            -Dsonar.sources=src \
+                            -Dsonar.host.url=${env.SONAR_URL} \
+                            -Dsonar.login=${env.SONAR_TOKEN}"
+                    }
+                }
+            }
+        }
+    }
+}
