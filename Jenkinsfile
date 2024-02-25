@@ -6,7 +6,7 @@ pipeline {
     
    stages {
         
-        stage('Checkout_SP'){
+        stage('Stage1_SP'){
            steps {
                 echo 'Hello Deops Siva prasad'
            }
