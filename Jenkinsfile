@@ -1,3 +1,5 @@
+@Library("my-shared-library") _
+
 pipeline {
     
     agent any 
@@ -9,6 +11,10 @@ pipeline {
                 echo 'Hello Deops Siva prasad'
            }
         }
-       
+        stage('Checkout_Stage2_Ranga'){
+           steps {
+                methodCalling()
+           }
+        }
     }
 }
