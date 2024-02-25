@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Checkout_Stage2_Ranga'){
            steps {
-                methodCalling()
+                funCall()
            }
         }
     }
