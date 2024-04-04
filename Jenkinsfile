@@ -15,5 +15,10 @@ pipeline {
                echo 'This is the second stage'
            }
         }
+       stage('Checkout_Stage3_Saratrh'){
+           steps {
+               echo 'This is the third stage'
+           }
+        }
     }
 }
