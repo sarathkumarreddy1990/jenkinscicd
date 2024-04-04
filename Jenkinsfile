@@ -1,5 +1,4 @@
 
-
 pipeline {
     
     agent any 
@@ -8,12 +7,12 @@ pipeline {
         
         stage('Stage1_SP'){
            steps {
-                echo 'Hello Deops Siva prasad'
+                echo 'This is the first stage'
            }
         }
         stage('Checkout_Stage2_Ranga'){
            steps {
-                funCall()
+               echo 'This is the second stage'
            }
         }
     }
