@@ -17,7 +17,7 @@ pipeline {
         }
        stage('Checkout_Stage3_Saratrh'){
            steps {
-               echo 'This is the third stage'
+               functionCall();
            }
         }
     }
