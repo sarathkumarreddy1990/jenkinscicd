@@ -17,8 +17,8 @@ pipeline {
            }
         }
        stage('Checkout_Stage3_Saratrh'){
-           steps {
-               methodCall();
+          steps {
+              methodCall();
            }
         }
     }
